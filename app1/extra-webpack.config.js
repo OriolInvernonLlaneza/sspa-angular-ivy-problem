@@ -14,6 +14,7 @@ module.exports = (angularWebpackConfig, options) => {
     /^@ex\/*/,
     /^single-spa$/,
     /^single-spa-angular$/,
+    /^single-spa-angular\/internals$/,
 
     /^rxjs$/,
     /^rxjs\/operators$/,
