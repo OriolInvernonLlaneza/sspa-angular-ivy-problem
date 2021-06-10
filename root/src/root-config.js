@@ -21,7 +21,7 @@ registerApplication(
 registerApplication(
   "app2",
   () => System.import("@ex/app2"),
-  isActive.app1,
+  isActive.app2,
   {
   }
 );
