@@ -1,0 +1,5 @@
+<ul>
+    <li *ngFor="let lg of languages" class="lang-item {{ lg }}" (click)="changeLanguage(lg)" role="button">
+        {{ lg | uppercase }}
+    </li>
+</ul>

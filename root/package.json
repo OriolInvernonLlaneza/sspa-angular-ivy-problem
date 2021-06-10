@@ -1,0 +1,56 @@
+{
+  "scripts": {
+    "install-all": "cd ../nav && yarn install && cd ../app1 && yarn install && cd ../app2 && yarn install && cd ../root && yarn install",
+    "start": "concurrently --kill-others --kill-others-on-fail -p name --names \"nav,app1,app2,root\" \"yarn run start:nav\" \"yarn run start:app1\" \"yarn run start:app2\" \"yarn run start:root\"",
+    "start:app1": "cd ../app1 && yarn run start:wp",
+    "start:nav": "cd ../nav && yarn run start:wp",
+    "start:app2": "cd ../app2 && yarn run start:wp",
+    "start:root": "cd ../root && webpack-dev-server --mode=development --port 4200 --env.isLocal=true",
+    "start:dev": "webpack-dev-server --mode=development --port 4200 --env.isLocal=true",
+    "lint": "eslint src",
+    "test": "jest"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged && eslint src"
+    }
+  },
+  "devDependencies": {
+    "@babel/core": "^7.7.4",
+    "@babel/preset-env": "^7.7.4",
+    "@types/jasmine": "^3.3.13",
+    "@types/jasminewd2": "^2.0.6",
+    "@types/systemjs": "^6.1.0",
+    "babel-eslint": "^11.0.0-beta.2",
+    "babel-loader": "^8.0.6",
+    "clean-webpack-plugin": "^3.0.0",
+    "concurrently": "^6.2.0",
+    "copy-webpack-plugin": "^5.0.4",
+    "eslint": "^6.7.2",
+    "eslint-config-important-stuff": "^1.1.0",
+    "eslint-config-prettier": "^6.7.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "html-webpack-plugin": "^3.2.0",
+    "husky": "^3.1.0",
+    "i18next-browser-languagedetector": "^4.1.1",
+    "jasmine-core": "^3.4.0",
+    "jasmine-reporters": "^2.3.2",
+    "jasmine-spec-reporter": "^4.2.1",
+    "jest": "^24.9.0",
+    "jest-cli": "^24.9.0",
+    "prettier": "^1.19.1",
+    "pretty-quick": "^2.0.1",
+    "protractor": "^5.4.2",
+    "serve": "^11.2.0",
+    "ts-node": "^8.5.4",
+    "tslint": "^5.17.0",
+    "typescript": "^3.5.1",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.9.0"
+  },
+  "dependencies": {
+    "i18next": "^19.5.1",
+    "single-spa": "^5.0.0"
+  }
+}

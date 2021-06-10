@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Example</title>
+
+  <script src="https://cdn.jsdelivr.net/npm/regenerator-runtime@0.13.7/runtime.min.js"></script>
+
+  <meta name="importmap-type" content="systemjs-importmap" />
+  <script type="systemjs-importmap">
+    {
+      "imports": {            
+        "@angular/core": "https://cdn.jsdelivr.net/npm/@esm-bundle/angular__core@11.1.1/system/es2015/ivy/angular-core.js",
+        "@angular/common": "https://cdn.jsdelivr.net/npm/@esm-bundle/angular__common@11.1.1/system/es2015/ivy/angular-common.js",
+        "@angular/router": "https://cdn.jsdelivr.net/npm/@esm-bundle/angular__router@11.1.1/system/es2015/ivy/angular-router.js",
+        "@angular/platform-browser": "https://cdn.jsdelivr.net/npm/@esm-bundle/angular__platform-browser@11.1.1/system/es2015/ivy/angular-platform-browser.js",
+
+        "@ex/root-config": "http://localhost:4200/root-config.js",
+        "@ex/nav": "http://localhost:4201/main.js",
+        "@ex/app1": "http://localhost:4202/main.js",
+        "@ex/app2": "http://localhost:4203/main.js",
+        
+        "single-spa": "https://cdn.jsdelivr.net/npm/single-spa@5.9.3/lib/system/single-spa.min.js",
+        "single-spa-angular/internals": "https://cdn.jsdelivr.net/npm/single-spa-angular@4.9.2/bundles/single-spa-angular-internals.umd.js",
+        "single-spa-angular": "https://cdn.jsdelivr.net/npm/single-spa-angular@4.9.2/bundles/single-spa-angular.umd.js",
+
+        "rxjs": "https://cdn.jsdelivr.net/npm/@esm-bundle/rxjs@6.6.6/system/es5/rxjs.min.js",
+        "rxjs/operators": "https://cdn.jsdelivr.net/npm/@esm-bundle/rxjs@6.6.6/system/es5/rxjs-operators.min.js",
+
+        "i18next": "https://unpkg.com/i18next/dist/umd/i18next.js",
+        "i18next-browser-languagedetector": "https://cdnjs.cloudflare.com/ajax/libs/i18next-browser-languagedetector/4.2.0/i18nextBrowserLanguageDetector.js"
+      }
+    }
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/zone.js@0.11.4/bundles/zone.umd.js"></script>
+  <script src="https://unpkg.com/import-map-overrides@2.3.2/dist/import-map-overrides.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/systemjs@6.3.2/dist/system.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/systemjs@6.3.2/dist/extras/amd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/systemjs@6.3.2/dist/extras/named-exports.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/systemjs@6.3.2/dist/extras/named-register.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/systemjs@6.3.2/dist/extras/named-register.min.js"></script>
+
+  <style>
+    body {
+      margin: 0;
+    }
+
+    #main {
+      margin-top: 50px;
+      height: calc(100vh - 50px);
+      background-color: white;
+    }
+
+    #navbar {
+      height: 50px;
+      border-bottom: 5px black solid;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="navbar"></div>
+  <main id="main">
+  </main>
+  <script>
+    System.import("@ex/root-config");
+  </script>
+  <import-map-overrides-full show-when-local-storage="devtools" dev-libs></import-map-overrides-full>
+</body>
+
+</html>
